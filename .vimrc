@@ -1,4 +1,4 @@
-set nocompatible               " ·Ç¼æÈİÄ£Ê½
+set nocompatible               " éå…¼å®¹æ¨¡å¼
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -6,52 +6,52 @@ Bundle 'gmarik/vundle'
 Bundle 'gmarik/snipmate.vim'
 Bundle 'honza/snipmate-snippets'
 
-color blackboard               " ÑÕÉ«
-set nu                         " ĞĞºÅ
-set guifont=Monaco\ 10         " ×ÖÌå
+color blackboard               " é¢œè‰²
+set nu                         " è¡Œå·
+set guifont=Monaco\ 10         " å­—ä½“
 " set guifont=Consolas:h11
-set autoindent                 " ×Ô¶¯¶ÔÆë£¬Ê¹ÓÃ noautoindent È¡ÏûÉèÖÃ£º
-set smartindent                " ÒÀ¾İÉÏÃæµÄ¸ñÊ½£¬ÖÇÄÜ¶ÔÆë
-set tabstop=4                  " ÉèÖÃtab¼üµÄ¿í¶È
-set backspace=indent,eol,start " ÍË¸ñ¼üÓĞĞ§
+set autoindent                 " è‡ªåŠ¨å¯¹é½ï¼Œä½¿ç”¨ noautoindent å–æ¶ˆè®¾ç½®ï¼š
+set smartindent                " ä¾æ®ä¸Šé¢çš„æ ¼å¼ï¼Œæ™ºèƒ½å¯¹é½
+set tabstop=4                  " è®¾ç½®tabé”®çš„å®½åº¦
+set backspace=indent,eol,start " é€€æ ¼é”®æœ‰æ•ˆ
 " set backspace=2
-set cindent shiftwidth=4       " ×Ô»»ĞĞÊ±ĞĞ¼ä½»´íÊ¹ÓÃ4¸ö¿Õ¸ñ
+set cindent shiftwidth=4       " è‡ªæ¢è¡Œæ—¶è¡Œé—´äº¤é”™ä½¿ç”¨4ä¸ªç©ºæ ¼
 set expandtab                  " To enter a real tab character use Ctrl-V<Tab> key sequence.
-set smartindent                " ÖÇÄÜ×Ô¶¯Ëõ½ø
-set ruler                      " ÓÒÏÂ½ÇÏÔÊ¾¹â±êÎ»ÖÃµÄ×´Ì¬ĞĞ
-set incsearch                  " ²éÕÒbookÊ±£¬µ±ÊäÈë/bÊ±»á×Ô¶¯ÕÒµ½
-set hlsearch                   " ¿ªÆô¸ßÁÁÏÔÊ¾½á¹û
-set incsearch                  " ¿ªÆôÊµÊ±ËÑË÷¹¦ÄÜ
-set nowrapscan                 " ËÑË÷µ½ÎÄ¼şÁ½¶ËÊ±²»ÖØĞÂËÑË÷
-set nocompatible               " ¹Ø±Õ¼æÈİÄ£Ê½
-set vb t_vb=                   " ¹Ø±ÕÌáÊ¾Òô
-" set ruler                  " ÔÚ±à¼­¹ı³ÌÖĞ£¬ÔÚÓÒÏÂ½ÇÏÔÊ¾¹â±êÎ»ÖÃµÄ×´Ì¬ĞĞ
-set hidden                     " ÔÊĞíÔÚÓĞÎ´±£´æµÄĞŞ¸ÄÊ±ÇĞ»»»º³åÇø
-set list                       " ÏÔÊ¾Tab·û£¬Ê¹ÓÃÒ»¸ßÁÁÊúÏß´úÌæ
+set smartindent                " æ™ºèƒ½è‡ªåŠ¨ç¼©è¿›
+set ruler                      " å³ä¸‹è§’æ˜¾ç¤ºå…‰æ ‡ä½ç½®çš„çŠ¶æ€è¡Œ
+set incsearch                  " æŸ¥æ‰¾bookæ—¶ï¼Œå½“è¾“å…¥/bæ—¶ä¼šè‡ªåŠ¨æ‰¾åˆ°
+set hlsearch                   " å¼€å¯é«˜äº®æ˜¾ç¤ºç»“æœ
+set incsearch                  " å¼€å¯å®æ—¶æœç´¢åŠŸèƒ½
+set nowrapscan                 " æœç´¢åˆ°æ–‡ä»¶ä¸¤ç«¯æ—¶ä¸é‡æ–°æœç´¢
+set nocompatible               " å…³é—­å…¼å®¹æ¨¡å¼
+set vb t_vb=                   " å…³é—­æç¤ºéŸ³
+" set ruler                  " åœ¨ç¼–è¾‘è¿‡ç¨‹ä¸­ï¼Œåœ¨å³ä¸‹è§’æ˜¾ç¤ºå…‰æ ‡ä½ç½®çš„çŠ¶æ€è¡Œ
+set hidden                     " å…è®¸åœ¨æœ‰æœªä¿å­˜çš„ä¿®æ”¹æ—¶åˆ‡æ¢ç¼“å†²åŒº
+set list                       " æ˜¾ç¤ºTabç¬¦ï¼Œä½¿ç”¨ä¸€é«˜äº®ç«–çº¿ä»£æ›¿
 set listchars=tab:\|\ ,
-syntax enable                                                 " ´ò¿ªÓï·¨¸ßÁÁ
-syntax on                                                     " ¿ªÆôÎÄ¼şÀàĞÍÕì²â
-filetype indent on                                            " Õë¶Ô²»Í¬µÄÎÄ¼şÀàĞÍ²ÉÓÃ²»Í¬µÄËõ½ø¸ñÊ½
-filetype plugin on                                            " Õë¶Ô²»Í¬µÄÎÄ¼şÀàĞÍ¼ÓÔØ¶ÔÓ¦µÄ²å¼ş
-filetype plugin indent on                                     " ÆôÓÃ×Ô¶¯²¹È«
-set nobackup                                                  " ²»Éú³É±¸·İÎÄ¼ş
-autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby " Ê¶±ğrubyÎÄ¼ş
-set lines=37 columns=97 " Æô¶¯gvimÊ±´°¿ÚµÄ´óĞ¡
+syntax enable                                                 " æ‰“å¼€è¯­æ³•é«˜äº®
+syntax on                                                     " å¼€å¯æ–‡ä»¶ç±»å‹ä¾¦æµ‹
+filetype indent on                                            " é’ˆå¯¹ä¸åŒçš„æ–‡ä»¶ç±»å‹é‡‡ç”¨ä¸åŒçš„ç¼©è¿›æ ¼å¼
+filetype plugin on                                            " é’ˆå¯¹ä¸åŒçš„æ–‡ä»¶ç±»å‹åŠ è½½å¯¹åº”çš„æ’ä»¶
+filetype plugin indent on                                     " å¯ç”¨è‡ªåŠ¨è¡¥å…¨
+set nobackup                                                  " ä¸ç”Ÿæˆå¤‡ä»½æ–‡ä»¶
+autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby " è¯†åˆ«rubyæ–‡ä»¶
+set lines=37 columns=97 " å¯åŠ¨gvimæ—¶çª—å£çš„å¤§å°
 
-"ÉèÖÃGVIMÄ¬ÈÏÄ¿Â¼
+"è®¾ç½®GVIMé»˜è®¤ç›®å½•
 "lcd C:\Sites\demo
-"Éè¶¨ÎÄ¼şä¯ÀÀÆ÷Ä¿Â¼Îªµ±Ç°Ä¿Â¼
+"è®¾å®šæ–‡ä»¶æµè§ˆå™¨ç›®å½•ä¸ºå½“å‰ç›®å½•
 set bsdir=buffer
-"×Ô¶¯ÇĞ»»Ä¿Â¼
+"è‡ªåŠ¨åˆ‡æ¢ç›®å½•
 set autochdir
 
-" gvim e303 ÎŞ·¨´ò¿ª ¡°***¡°µÄ½»»»ÎÄ¼ş£¬»Ö¸´½«²»¿ÉÄÜ
+" gvim e303 æ— æ³•æ‰“å¼€ â€œ***â€œçš„äº¤æ¢æ–‡ä»¶ï¼Œæ¢å¤å°†ä¸å¯èƒ½
 " set directory=.,$TEMP
 
-"½â¾ö±àÂë
+"è§£å†³ç¼–ç 
 set encoding=utf-8
 set termencoding=utf-8
-set fileencoding=chinese
+set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese
 "set langmenu=zh_CN.utf-8
 source $VIMRUNTIME/delmenu.vim
@@ -59,7 +59,7 @@ source $VIMRUNTIME/menu.vim
 "language messages zh_cn.utf-8
 "language messages zh_cn.utf-8
 
-"Toggle Menu and Toolbar gvim ²Ëµ¥À¸Óë¹¤¾ßÀ¸Òş²ØÓëÏÔÊ¾¶¯Ì¬ÇĞ»»
+"Toggle Menu and Toolbar gvim èœå•æ ä¸å·¥å…·æ éšè—ä¸æ˜¾ç¤ºåŠ¨æ€åˆ‡æ¢
 set guioptions-=m
 set guioptions-=T
 map <silent> <F2> :if &guioptions =~# 'T' <Bar>
