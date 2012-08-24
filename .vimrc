@@ -3,8 +3,20 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-Bundle 'gmarik/snipmate.vim'
-Bundle 'honza/snipmate-snippets'
+
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
+Bundle "vim-ruby/vim-ruby"
+Bundle "fholgado/minibufexpl.vim"
+Bundle "vim-scripts/taglist.vim"
+Bundle "vim-scripts/winmanager--Fox"
+Bundle "scrooloose/nerdtree"
+Bundle "hukl/Smyck-Color-Scheme"
+" Bundle "plasticboy/vim-markdown"
+Bundle "hallison/vim-markdown"
+Bundle "majutsushi/tagbar"
 
 color blackboard               " 颜色
 set nu                         " 行号
@@ -31,12 +43,14 @@ set list                       " 显示Tab符，使用一高亮竖线代替
 set listchars=tab:\|\ ,
 syntax enable                                                 " 打开语法高亮
 syntax on                                                     " 开启文件类型侦测
+" set ofu=syntaxcomplete#Complete " Omni-complete
+" filetype on
 filetype indent on                                            " 针对不同的文件类型采用不同的缩进格式
 filetype plugin on                                            " 针对不同的文件类型加载对应的插件
 filetype plugin indent on                                     " 启用自动补全
 set nobackup                                                  " 不生成备份文件
 autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby " 识别ruby文件
-set lines=37 columns=97 " 启动gvim时窗口的大小
+set lines=33 columns=87 " 启动gvim时窗口的大小
 
 "设置GVIM默认目录
 "lcd C:\Sites\demo
@@ -76,22 +90,42 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
-"winManager setting
-let g:NERDTree_title="[NERD Tree]"
-let g:winManagerWindowLayout='NERDTree|TagList'
-let g:winManagerWidth = 30
-let g:defaultExplorer = 0
+" Taglist
+let Tlist_Enable_Fold_Column = 0
+let Tlist_Compact_Format = 1
+let Tlist_File_Fold_Auto_Close = 0
+let Tlist_GainFocus_On_ToggleOpen = 1
+" map <F4> :TlistToggle<cr>
+" vmap <F4> <esc>:TlistToggle<cr>
+" imap <F4> <esc>:TlistToggle<cr>
 
-function! NERDTree_Start()
-    exec 'NERDTree'
-endfunction
-function! NERDTree_IsValid()
-    return 1
-endfunction
+map <F4> :TagbarToggle<cr>
+vmap <F4> <esc>:TagbarToggle<cr>
+imap <F4> <esc>:TagbarToggle<cr>
+" Nerdtree
+let Tlist_Use_Right_Window = 1
+map <F3> :NERDTreeToggle<cr>
+vmap <F3> <esc>:NERDTreeToggle<cr>
+imap <F3> <esc>:NERDTreeToggle<cr>
 
-nmap <C-W><C-F> :FirstExplorerWindow<cr>
-nmap <C-W><C-B> :BottomExplorerWindow<cr>
-nmap <silent> <F3> :WMToggle<cr>
+" "winManager setting
+" let g:NERDTree_title="[NERD Tree]"
+" let g:winManagerWindowLayout='NERDTree|TagList'
+" let g:winManagerWidth = 30
+" let g:defaultExplorer = 0
+" 
+" function! NERDTree_Start()
+"     exec 'NERDTree'
+" endfunction
+" function! NERDTree_IsValid()
+"     return 1
+" endfunction
+" 
+" nmap <C-W><C-F> :FirstExplorerWindow<cr>
+" nmap <C-W><C-B> :BottomExplorerWindow<cr>
+" nmap <silent> <F3> :WMToggle<cr>:q<cr>
+
+
 nmap <silent> <C-k> <C-W><C-k>
 nmap <silent> <C-j> <C-W><C-j>
 nmap <silent> <C-h> <C-W><C-h>
@@ -103,5 +137,27 @@ if has("autocmd")
     autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
     autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 endif
+"improve autocomplete menu color
+highlight Pmenu    ctermfg=2 ctermbg=0 gui=bold
+highlight PmenuSel ctermfg=0 ctermbg=7
 
-nmap <silent><F7> :w<CR>:!ruby.exe %<CR><CR>
+"omnicomplete settings
+let OmniCpp_GlobalScopeSearch   = 1
+let OmniCpp_DisplayMode         = 1
+let OmniCpp_ShowScopeInAbbr     = 0 " do not show namespace in pop-up
+let OmniCpp_ShowPrototypeInAbbr = 1 " show prototype in pop-up
+let OmniCpp_ShowAccess          = 1 " show access in pop-up
+let OmniCpp_SelectFirstItem     = 1 " select first item in pop-up
+set completeopt=menuone,menu,longest
+
+
+"markdown
+"au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd
+
+nmap <silent><F7> :w<CR>:!ruby %<CR>
+imap <F4> <Esc><F4>  
+imap <F5> <Esc><F5>  
+imap <F6> <Esc><F6>
+
+nmap <silent><C-S> :w<CR>
+imap <C-S> <Esc><C-S>
